@@ -3,13 +3,12 @@ import { GoogleOAuthProvider, GoogleLogin } from '@react-oauth/google';
 import jwt_decode from "jwt-decode";
 
 function GoogleLoginButton() {
-    // const responseGoogle = (response) => {
-    //     console.log(response); // Handle the Google login response here
-    // };
+    
+    const GoogleClientID = process.env.REACT_APP_GOOGLE_ClIENT_ID;
 
     return (
         <div>
-            <GoogleOAuthProvider clientId="591998037911-djuc6q295g0t3k4gtooc8mn99e89g8sa.apps.googleusercontent.com">
+            <GoogleOAuthProvider clientId={GoogleClientID}>
 
                 <GoogleLogin
                     onSuccess={credentialResponse => {
